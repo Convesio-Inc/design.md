@@ -1,6 +1,12 @@
 # design.md
 Convesio's design.md
 
+## References
+
+- Google DESIGN.md repository: [google-labs-code/design.md](https://github.com/google-labs-code/design.md)
+- Google DESIGN.md format spec: [docs/spec.md](https://github.com/google-labs-code/design.md/blob/main/docs/spec.md)
+- Google DESIGN.md CLI package: [@google/design.md](https://www.npmjs.com/package/@google/design.md)
+
 ## Scope & Source of Truth
 
 - `new/design.md`: **Brand-level** system. Sources are **static site first** and **selective Figma** (logos/brand styling only). This file should not use Storybook as a source.
