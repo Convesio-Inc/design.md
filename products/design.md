@@ -203,7 +203,7 @@ components:
 ## Overview
 This file is the product-level `design.md` for Convesio product UI work. Storybook is the sole source of truth for tokens, component behavior, and variant contracts in this file.
 
-The root brand `design.md` may provide context, but this product file governs implementation decisions for product surfaces whenever there is any conflict.
+The brand file at `new/design.md` may provide context, but this product file governs implementation decisions for product surfaces whenever there is any conflict.
 
 Source refs: `storybook:src/stories/DesignSystem.stories.jsx`, `storybook:src/styles/tokens.css`, `storybook:tokens/design-tokens.json`
 

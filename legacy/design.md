@@ -85,7 +85,7 @@ components:
 ## Overview
 This file is a legacy brand snapshot sourced from the historical Convesio Figma brand style guide only. It is intentionally isolated from static-site and Storybook authority models.
 
-Use this file for legacy visual reconstruction, historical comparison, and migration reference. It should not override current brand (`design.md`) or product (`products/design.md`) authority files.
+Use this file for legacy visual reconstruction, historical comparison, and migration reference. It should not override current brand (`new/design.md`) or product (`products/design.md`) authority files.
 
 Source refs: `figma:legacy-brand-guide`, `figma:legacy-logo-style`, `figma:legacy-type-scale`
 
