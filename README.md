@@ -7,6 +7,14 @@ Convesio's design.md
 - `products/design.md`: **Product-level** system. **Storybook is the sole source of truth** for product tokens, components, and variants.
 - `legacy/design.md`: **Legacy brand snapshot**. **Figma legacy file is the sole source of truth** for historical styles and migration reference.
 
+## Directory Guide
+
+- `new/`: Current canonical brand DESIGN.md location.
+- `products/`: Product-specific DESIGN.md files (Storybook-authoritative).
+- `legacy/`: Legacy/historical DESIGN.md files (Figma-authoritative snapshots).
+- `sources/`: Curated source evidence and mappings used to justify token/component decisions.
+- `docs/`: Local planning/spec notes; ignored from git by default in this repository.
+
 ## Updating `new/design.md`
 
 1. Curate source evidence into `sources/` (no bulk dumps).
