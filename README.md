@@ -13,7 +13,6 @@ Convesio's design.md
 - `products/`: Product-specific DESIGN.md files (Storybook-authoritative).
 - `legacy/`: Legacy/historical DESIGN.md files (Figma-authoritative snapshots).
 - `sources/`: Curated source evidence and mappings used to justify token/component decisions.
-- `docs/`: Local planning/spec notes; ignored from git by default in this repository.
 
 ## Updating `new/design.md`
 
