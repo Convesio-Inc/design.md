@@ -2,107 +2,220 @@
 version: "alpha"
 name: "Convesio Design System"
 description: "Canonical visual and component guidance with curated provenance."
-authority:
-  visual: "static-site"
-  components: "storybook"
-  brand: "figma-selective"
-rules:
-  static-site-canonical-visual-authority: true
-  storybook-current-components-only: true
-  figma-selective-logos-style-only: true
-  avoid-dark-bias-inheritance: true
 colors:
-  primary:
-    value: "#0A66FF"
-    status: "proposed"
-    sources:
-      - "static-site:navigation"
-      - "figma:logo-brand"
-  surface:
-    value: "#FFFFFF"
-    status: "proposed"
-    sources:
-      - "static-site:page-surface"
-  on-surface:
-    value: "#111111"
-    status: "proposed"
-    sources:
-      - "static-site:body-copy"
+  primary: "#0D2743"
+  secondary: "#2D85D8"
+  tertiary: "#FF6A5B"
+  neutral: "#F2F5F7"
+  surface: "#FFFFFF"
+  surface-alt: "#FAFAFA"
+  surface-dark: "#0D2743"
+  surface-dark-deep: "#0B111E"
+  on-surface: "#1A1A1A"
+  on-surface-secondary: "#4A4A4A"
+  on-surface-tertiary: "#7A7A7A"
+  on-surface-inverse: "#FFFFFF"
+  border: "#ECECEC"
+  border-strong: "#C3C9CE"
+  success: "#2BB673"
+  warning: "#F5A623"
+  error: "#FF4040"
+  link: "#2D85D8"
+  link-hover: "#005EC4"
+  link-aa: "#005EC4"
+  link-aa-hover: "#0C2B4D"
+  tertiary-hover: "#F89A8F"
+  tertiary-aa: "#C24135"
 typography:
+  display-lg:
+    fontFamily: "Inter"
+    fontSize: "72px"
+    fontWeight: 700
+    lineHeight: "1.05"
+    letterSpacing: "-0.03em"
+  display-md:
+    fontFamily: "Inter"
+    fontSize: "40px"
+    fontWeight: 800
+    lineHeight: "1.05"
+    letterSpacing: "-0.02em"
+  headline-lg:
+    fontFamily: "Inter"
+    fontSize: "32px"
+    fontWeight: 700
+    lineHeight: "1.2"
+    letterSpacing: "-0.02em"
+  headline-md:
+    fontFamily: "Inter"
+    fontSize: "25px"
+    fontWeight: 600
+    lineHeight: "1.2"
+    letterSpacing: "0em"
+  title-lg:
+    fontFamily: "Inter"
+    fontSize: "21px"
+    fontWeight: 600
+    lineHeight: "1.2"
+  title-md:
+    fontFamily: "Inter"
+    fontSize: "18px"
+    fontWeight: 500
+    lineHeight: "1.4"
   body-md:
     fontFamily: "Inter"
     fontSize: "16px"
     fontWeight: 400
-    lineHeight: "24px"
-    status: "proposed"
-    sources:
-      - "static-site:body-copy"
-      - "storybook:button-primary"
+    lineHeight: "1.55"
+  body-sm:
+    fontFamily: "Inter"
+    fontSize: "14px"
+    fontWeight: 400
+    lineHeight: "1.4"
+  label-md:
+    fontFamily: "Inter"
+    fontSize: "13px"
+    fontWeight: 600
+    lineHeight: "1.2"
+    letterSpacing: "0.16em"
+  label-sm:
+    fontFamily: "Inter"
+    fontSize: "12px"
+    fontWeight: 600
+    lineHeight: "16px"
+    letterSpacing: "0.18em"
+  caption:
+    fontFamily: "Inter"
+    fontSize: "12px"
+    fontWeight: 600
+    lineHeight: "16px"
+    letterSpacing: "0.04em"
+rounded:
+  xs: "4px"
+  sm: "6px"
+  md: "10px"
+  lg: "16px"
+  xl: "24px"
+  full: "999px"
 spacing:
-  md:
-    value: "16px"
-    status: "proposed"
-    sources:
-      - "static-site:feature-grid"
-radii:
-  sm:
-    value: "6px"
-    status: "proposed"
-    sources:
-      - "static-site:cards"
-      - "storybook:button-primary"
+  xs: "4px"
+  sm: "8px"
+  md: "16px"
+  lg: "24px"
+  xl: "32px"
+  xxl: "48px"
+  section-md: "72px"
+  section-lg: "96px"
+  section-xl: "120px"
+  container-sm: "980px"
+  container-lg: "1240px"
+  grid-gap-sm: "20px"
+  grid-gap-md: "24px"
+  grid-gap-xl: "80px"
+shadows:
+  xs: "0 1px 2px rgba(13,39,67,0.06)"
+  sm: "0 2px 6px rgba(13,39,67,0.08)"
+  md: "0 8px 20px rgba(13,39,67,0.10)"
+  lg: "0 20px 48px rgba(13,39,67,0.14)"
+  inset: "inset 0 1px 0 rgba(255,255,255,0.06)"
 components:
   button-primary:
-    status: "proposed"
-    source: "storybook:button-primary"
+    backgroundColor: "{colors.tertiary}"
+    textColor: "{colors.primary}"
+    typography: "{typography.label-sm}"
+    rounded: "{rounded.full}"
+    padding: "14px"
+  button-primary-hover:
+    backgroundColor: "{colors.tertiary-hover}"
+    textColor: "{colors.primary}"
+    typography: "{typography.label-sm}"
+    rounded: "{rounded.full}"
+    padding: "14px"
+  button-secondary:
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.primary}"
+    typography: "{typography.label-sm}"
+    rounded: "{rounded.full}"
+    padding: "14px"
+  button-secondary-hover:
     backgroundColor: "{colors.primary}"
     textColor: "{colors.surface}"
+    typography: "{typography.label-sm}"
+    rounded: "{rounded.full}"
+    padding: "14px"
+  link-inline-aa:
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.link-aa}"
+    typography: "{typography.body-sm}"
+    rounded: "{rounded.xs}"
+    padding: "0px"
+  link-inline-aa-hover:
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.link-aa-hover}"
+    typography: "{typography.body-sm}"
+    rounded: "{rounded.xs}"
+    padding: "0px"
+  eyebrow-aa:
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.tertiary-aa}"
+    typography: "{typography.label-sm}"
+    rounded: "{rounded.xs}"
+    padding: "0px"
+  card-light:
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.on-surface}"
     typography: "{typography.body-md}"
-    radius: "{radii.sm}"
-    paddingBlock: "12px"
-    paddingInline: "16px"
+    rounded: "{rounded.lg}"
+    padding: "{spacing.lg}"
+  card-dark:
+    backgroundColor: "{colors.surface-dark}"
+    textColor: "{colors.on-surface-inverse}"
+    typography: "{typography.body-md}"
+    rounded: "{rounded.lg}"
+    padding: "{spacing.lg}"
+  section-dark:
+    backgroundColor: "{colors.surface-dark}"
+    textColor: "{colors.on-surface-inverse}"
+    typography: "{typography.body-md}"
+    rounded: "{rounded.xs}"
+    padding: "{spacing.section-lg}"
 ---
 
 ## Overview
-This file is the canonical `design.md` reference for Convesio design decisions. Static-site visuals are the canonical authority for overall look, feel, layout rhythm, color usage, imagery direction, and visual conflict resolution. Storybook describes current product component behavior and variants. Figma is used selectively for logos and brand styling references only.
+This file is the canonical brand-level `design.md` reference for Convesio design decisions. Static-site visuals are the canonical authority for overall look, feel, layout rhythm, color usage, imagery direction, and visual conflict resolution. Figma is used selectively for logos and brand styling references only.
 
 Future UI generation should favor the lighter static-site direction and avoid inheriting legacy dark-background bias unless that treatment is directly evidenced in the static site.
 
 Canonical authority model:
 - Static site is canonical for page-level visual direction and conflict resolution.
-- Storybook is canonical for current component behavior and variant contracts.
 - Figma is selective for logos and brand styling references only.
 - Source-specific capture rules live in each source README; shared authority decisions are defined here.
 
-Status lifecycle:
-- `proposed`: candidate value with curated evidence linked by short source IDs.
-- `validated`: reviewed by a maintainer with evidence quality confirmed.
-- `canonical`: approved default for broad production use across the system.
-
-Promotion requires passing the curated evidence checklist in `sources/mapping.md`.
-
-Source refs: `static-site:home-hero`, `static-site:page-surface`, `storybook:button-primary`, `figma:logo-brand`
+Source refs: `static-site:home-hero`, `static-site:page-surface`, `figma:logo-brand`
 
 ## Colors
-Color roles are derived from static-site usage first, then reconciled with Storybook where current components depend on an explicit token. Figma color cues are limited to logo and brand styling context; they do not override static-site page direction.
+Color roles are derived from static-site usage first. Figma color cues are limited to logo and brand styling context; they do not override static-site page direction.
 
-Use `surface` and `on-surface` for the default light UI baseline. Use `primary` for core interactive emphasis and brand-forward calls to action.
+Background treatments from the static site are part of the canonical palette: use `surface` and `surface-alt` for light backgrounds, `surface-dark`/`surface-dark-deep` for dark sections, and `on-surface-inverse` for text on dark backgrounds. Use `tertiary` for CTA emphasis and `primary` for strong navy anchors.
 
 Accessibility guardrails (v1): [contrast status: proposed, not yet verified end-to-end] body text and essential UI text should target WCAG AA contrast (4.5:1 minimum against its surface). Large text (18px regular or 14px bold and above) should not drop below 3:1. Non-text interactive UI indicators such as borders, icons, and controls should maintain at least 3:1 contrast against adjacent surfaces.
+
+Canonical accessibility defaults:
+- Use `link-inline-aa` / `link-inline-aa-hover` for body-text link treatment.
+- Use `eyebrow-aa` for eyebrow/kicker text on light surfaces.
 
 Source refs: `static-site:navigation`, `static-site:page-surface`, `static-site:body-copy`, `figma:logo-brand`
 
 ## Typography
-Typography should preserve the static site's reading rhythm and approachable product-marketing tone. Current Storybook components may clarify component-level type contracts, but broad type scale choices should remain aligned to static-site behavior.
+Typography should preserve the static site's reading rhythm and approachable product-marketing tone.
 
 `body-md` is the baseline text role for product UI copy and component labels until verified source captures justify a fuller type scale.
 
-Source refs: `static-site:body-copy`, `storybook:button-primary`
+Source refs: `static-site:body-copy`
 
 ## Layout
 Spacing and composition follow static-site page patterns: clear section rhythm, generous breathing room, and reusable grid spacing that can translate into product screens without becoming dense or dark by default.
 
-Use `spacing.md` as a portable baseline for component and page layout decisions. Additional spacing tokens should be added only when curated source evidence shows a repeated need.
+Use `container-lg` (`1240px`) and `container-sm` (`980px`) for content width constraints. Use section spacing tokens (`section-md`, `section-lg`, `section-xl`) for vertical rhythm and `grid-gap-sm`/`grid-gap-md`/`grid-gap-xl` for composition-level spacing.
 
 Focus visibility (v1): [focus status: proposed, partially verified] all keyboard-focusable controls must render a clearly visible focus indicator that is not color-only and remains present against light surfaces; prefer an outline or ring with at least 3:1 contrast from adjacent colors. Do not suppress focus styles without an equivalent, clearly perceivable replacement.
 
@@ -113,41 +226,47 @@ Source refs: `static-site:feature-grid`, `static-site:cta-section`
 ## Elevation & Depth
 Depth cues should mirror observable static-site hierarchy and interaction patterns. Do not introduce a broad shadow system until curated source evidence shows repeated elevation behavior across static-site or current Storybook surfaces.
 
-Prefer contrast, spacing, and border treatment before adding heavy shadows.
+Prefer contrast, spacing, and border treatment before adding heavy shadows. When shadows are needed, match static-site tiers: subtle (`shadows.xs`/`shadows.sm`) for light cards, moderate (`shadows.md`) for elevated content blocks, and restrained large (`shadows.lg`) only for hero-level emphasis. Use `shadows.inset` for gentle highlight layering on dark surfaces where appropriate.
 
 Source refs: `static-site:cards`
 
 ## Shapes
-Shape language should align to static-site surfaces and current Storybook components. Use modest radii for controls and cards, and avoid sharp changes in radius scale without visible source evidence.
+Shape language should align to static-site surfaces. Use modest radii for controls and cards, and avoid sharp changes in radius scale without visible source evidence.
 
-`radii.sm` is the initial proposed control radius for buttons and compact UI surfaces.
+`rounded.sm` is the initial control radius for buttons and compact UI surfaces.
 
-Source refs: `static-site:cards`, `storybook:button-primary`
+Source refs: `static-site:cards`
 
 ## Components
-Canonical component guidance comes from current Storybook product components only. Deprecated, legacy, or speculative components are excluded from v1 unless explicitly labeled as proposed and tied to curated source evidence.
+Canonical component guidance in this brand file is grounded in static-site component patterns and selective Figma brand context. Product component contracts live in `products/design.md`.
 
-`button-primary` is the initial proposed component entry because it links visible static-site brand direction with current Storybook component behavior.
+Core component treatments are now grounded in static-site evidence:
+- `button-primary` and `button-primary-hover` map to coral CTA treatment (`.btn-primary`).
+- `button-secondary` and `button-secondary-hover` map to the site's secondary/ghost button behavior in light and dark contexts.
+- `link-inline-aa` and `link-inline-aa-hover` are canonical for inline links in body-text contexts.
+- `eyebrow-aa` is canonical for eyebrow/kicker text on light backgrounds.
+- Brighter brand-expression treatments are documented in prose and should be used contextually in large-format marketing placements only.
+- `card-light` and `card-dark` map to static-site surface cards in light and dark sections.
+- `section-dark` maps to dark background section blocks with inverse typography.
 
-Source refs: `storybook:button-primary`, `static-site:cta-section`
+Where the static site uses border-driven ghost styles, explicit borders, focus rings, and shadow nuances are captured in prose guidance until component property support expands.
+
+Source refs: `static-site:cta-section`, `figma:logo-brand`
 
 ## Do's and Don'ts
 - Do treat static-site visuals as final authority when sources conflict.
-- Do use Storybook to describe current product component contracts and variants.
 - Do use Figma selectively for logos and brand styling references only.
 - Do keep short source IDs near non-obvious token, layout, and component decisions.
 - Do preserve WCAG-oriented contrast and focus visibility guardrails for v1 defaults.
 - Do keep baseline motion restrained and respect reduced-motion preferences.
-- Don't inherit historical dark-background bias from Figma or legacy artifacts unless static-site evidence supports it.
-- Don't ingest broad static-site, Storybook, or Figma exports into canonical tokens.
-- Don't include deprecated or legacy Storybook components in v1.
-- Don't remove or hide keyboard focus indicators without an accessible replacement.
+- Don't inherit historical dark-theme bias unless explicit static-site evidence supports it.
+- Don't ingest broad exports from static-site, Storybook, or Figma into canonical tokens.
+- Don't canonize deprecated or experimental Storybook components in v1.
+- Don't remove keyboard focus indicators without an accessible replacement.
 - Don't introduce decorative motion patterns that exceed static-site behavior.
-- Don't treat the following as in scope for v1: automated bulk ingestion from static-site, Storybook, or Figma exports.
-- Don't restore legacy dark-theme patterns without explicit static-site evidence.
-- Don't canonize deprecated or experimental Storybook components.
 - Don't expand the token taxonomy beyond currently evidenced needs.
+- Don't use Storybook as a source in this top-level brand file; keep product-level Storybook sourcing in `products/design.md`.
 
 ## Sources Mapping
 - Use short source IDs in `design.md` entries and keep detailed mappings canonical in `sources/mapping.md`.
-- Current IDs used in this file: `static-site:*`, `storybook:button-primary`, `figma:logo-brand`.
+- Current IDs used in this file: `static-site:*`, `figma:logo-brand`.
