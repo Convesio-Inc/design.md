@@ -6,7 +6,6 @@ colors:
   primary: "#0D2743"
   secondary: "#2D85D8"
   tertiary: "#FF6A5B"
-  tertiary-soft: "#FFB3AA"
   neutral: "#F2F5F7"
   surface: "#FFFFFF"
   surface-alt: "#FAFAFA"
@@ -25,6 +24,7 @@ colors:
   error: "#FF4040"
   link: "#2D85D8"
   link-hover: "#005EC4"
+  link-dark: "#FFFFFF"
   link-aa: "#005EC4"
   link-aa-hover: "#0C2B4D"
   tertiary-hover: "#F89A8F"
@@ -160,14 +160,14 @@ motion:
   dur-slow: "360ms"
 components:
   button-primary:
-    backgroundColor: "{colors.tertiary-soft}"
-    textColor: "{colors.primary}"
+    backgroundColor: "{colors.primary}"
+    textColor: "{colors.surface}"
     typography: "{typography.label-sm}"
     rounded: "{rounded.full}"
     padding: "14px"
   button-primary-hover:
-    backgroundColor: "{colors.tertiary-hover}"
-    textColor: "{colors.primary}"
+    backgroundColor: "{colors.link-aa-hover}"
+    textColor: "{colors.surface}"
     typography: "{typography.label-sm}"
     rounded: "{rounded.full}"
     padding: "14px"
@@ -195,6 +195,48 @@ components:
     typography: "{typography.body-sm}"
     rounded: "{rounded.xs}"
     padding: "0px"
+  link-dark-inline:
+    backgroundColor: "{colors.surface-dark}"
+    textColor: "{colors.link-dark}"
+    typography: "{typography.body-sm}"
+    rounded: "{rounded.xs}"
+    padding: "0px"
+  link-dark-inline-muted:
+    backgroundColor: "{colors.surface-dark}"
+    textColor: "{colors.on-surface-inverse}"
+    typography: "{typography.body-sm}"
+    rounded: "{rounded.xs}"
+    padding: "0px"
+  nav-link:
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.primary}"
+    typography: "{typography.body-sm}"
+    rounded: "{rounded.xs}"
+    padding: "0px"
+  nav-link-muted:
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.on-surface-secondary}"
+    typography: "{typography.body-sm}"
+    rounded: "{rounded.xs}"
+    padding: "0px"
+  header-cta:
+    backgroundColor: "{colors.primary}"
+    textColor: "{colors.surface}"
+    typography: "{typography.label-sm}"
+    rounded: "{rounded.full}"
+    padding: "14px"
+  hero-kicker:
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.on-surface-secondary}"
+    typography: "{typography.label-sm}"
+    rounded: "{rounded.full}"
+    padding: "8px"
+  hero-status-panel:
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.on-surface}"
+    typography: "{typography.body-sm}"
+    rounded: "{rounded.lg}"
+    padding: "{spacing.lg}"
   eyebrow-aa:
     backgroundColor: "{colors.surface}"
     textColor: "{colors.tertiary-aa}"
@@ -206,7 +248,7 @@ components:
     textColor: "{colors.on-surface}"
     typography: "{typography.body-md}"
     rounded: "{rounded.lg}"
-    padding: "{spacing.lg}"
+    padding: "28px"
   card-dark:
     backgroundColor: "{colors.surface-dark}"
     textColor: "{colors.on-surface-inverse}"
@@ -222,31 +264,32 @@ components:
 ---
 
 ## Overview
-This file is the canonical brand-level `design.md` reference for Convesio design decisions. Static-site visuals are the canonical authority for overall look, feel, layout rhythm, color usage, imagery direction, and visual conflict resolution. Figma is used selectively for logos and brand styling references only.
+This file is the canonical brand-level `design.md` reference for Convesio design decisions. Static-site visuals are the primary authority for overall look, feel, layout rhythm, color usage, imagery direction, and visual conflict resolution.
 
 Future UI generation should favor the lighter static-site direction and avoid inheriting legacy dark-background bias unless that treatment is directly evidenced in the static site.
 
 Canonical authority model:
 - Static site is canonical for page-level visual direction and conflict resolution.
-- Figma is selective for logos and brand styling references only.
+- Figma is allowed only for logo and icon assets.
 - Source-specific capture rules live in each source README; shared authority decisions are defined here.
 
-Source refs: `static-site:home-hero`, `static-site:page-surface`, `figma:logo-brand`
+Source refs: `static-site:home-hero`, `static-site:page-surface`, `figma:logo-brand`, `figma:icon-set`
 
 ## Colors
-Color roles are derived from static-site usage first. Figma color cues are limited to logo and brand styling context; they do not override static-site page direction.
+Color roles are derived from static-site usage only.
 
 Background treatments from the static site are part of the canonical palette: use `surface` and `surface-alt` for light backgrounds, `surface-dark`/`surface-dark-deep` for dark sections, and `on-surface-inverse` for text on dark backgrounds. Use `tertiary` for CTA emphasis and `primary` for strong navy anchors.
 
-Static-source mapping note: `tertiary-soft` (`#FFB3AA`) is the canonical primary CTA fill token from the static page button system, while `tertiary` (`#FF6A5B`) remains the core accent/coral token.
+Static-source mapping note: dark navy (`primary`) is the canonical primary button fill for `new/`. Coral tokens (`tertiary`, `tertiary-hover`) are accent/text treatments only and should not be used as section backgrounds.
 
 Accessibility guardrails (v1): [contrast status: proposed, not yet verified end-to-end] body text and essential UI text should target WCAG AA contrast (4.5:1 minimum against its surface). Large text (18px regular or 14px bold and above) should not drop below 3:1. Non-text interactive UI indicators such as borders, icons, and controls should maintain at least 3:1 contrast against adjacent surfaces.
 
 Canonical accessibility defaults:
 - Use `link-inline-aa` / `link-inline-aa-hover` for body-text link treatment.
 - Use `eyebrow-aa` for eyebrow/kicker text on light surfaces.
+- Use `link-dark-inline` (or muted dark-link treatment) for links in dark sections; avoid coral links on dark backgrounds unless explicitly called out as accent content.
 
-Source refs: `static-site:navigation`, `static-site:page-surface`, `static-site:body-copy`, `figma:logo-brand`
+Source refs: `static-site:navigation`, `static-site:page-surface`, `static-site:body-copy`
 
 ## Typography
 Typography should preserve the static site's reading rhythm and approachable product-marketing tone.
@@ -259,6 +302,11 @@ Source refs: `static-site:body-copy`
 Spacing and composition follow static-site page patterns: clear section rhythm, generous breathing room, and reusable grid spacing that can translate into product screens without becoming dense or dark by default.
 
 Use `container-lg` (`1240px`) and `container-sm` (`980px`) for content width constraints. Use section spacing tokens (`section-md`, `section-lg`, `section-xl`) for vertical rhythm and `grid-gap-sm`/`grid-gap-md`/`grid-gap-xl` for composition-level spacing.
+
+Header/hero layout pattern from static upload:
+- Top navigation uses a wide horizontal container with lightweight inline nav links and a compact dark primary CTA at top-right.
+- Hero uses a left-heavy headline/content column with a right status/metrics panel card.
+- Keep the hero backdrop predominantly light/neutral; avoid coral section fills.
 
 Focus visibility (v1): [focus status: proposed, partially verified] all keyboard-focusable controls must render a clearly visible focus indicator that is not color-only and remains present against light surfaces; prefer an outline or ring with at least 3:1 contrast from adjacent colors. Do not suppress focus styles without an equivalent, clearly perceivable replacement.
 
@@ -283,35 +331,42 @@ Shape language should align to static-site surfaces. Use modest radii for contro
 Source refs: `static-site:cards`
 
 ## Components
-Canonical component guidance in this brand file is grounded in static-site component patterns and selective Figma brand context. Product component contracts live in `products/design.md`.
+Canonical component guidance in this brand file is grounded in static-site component patterns. Figma can supply logo/icon assets only. Product component contracts live in `products/design.md`.
 
 Core component treatments are now grounded in static-site evidence:
-- `button-primary` and `button-primary-hover` map to coral CTA treatment (`.btn-primary`).
-- `button-secondary` and `button-secondary-hover` map to the site's secondary/ghost button behavior in light and dark contexts.
+- `button-primary` and `button-primary-hover` map to dark primary CTA treatment.
+- `button-secondary` and `button-secondary-hover` map to light/outlined secondary treatment with dark hover inversion.
 - `link-inline-aa` and `link-inline-aa-hover` are canonical for inline links in body-text contexts.
+- `link-dark-inline` and muted dark-link treatment are canonical for navigation/footer links on dark surfaces.
 - `eyebrow-aa` is canonical for eyebrow/kicker text on light backgrounds.
-- Brighter brand-expression treatments are documented in prose and should be used contextually in large-format marketing placements only.
+- Brighter coral treatments are accent-only and should not be used as section background fills.
 - `card-light` and `card-dark` map to static-site surface cards in light and dark sections.
 - `section-dark` maps to dark background section blocks with inverse typography.
+- `nav-link`, `nav-link-muted`, and `header-cta` represent the top header/navigation pattern shown in the static upload.
+- `hero-kicker` and `hero-status-panel` represent the front-page hero badge + right-side status panel pattern.
+
+Card styling note: light cards use white surfaces, `16px` corners, and `28px` inner padding with subtle hairline borders (`#ECECEC`) as seen in the static page card grid.
 
 Where the static site uses border-driven ghost styles, explicit borders, focus rings, and shadow nuances are captured in prose guidance until component property support expands.
 
-Source refs: `static-site:cta-section`, `figma:logo-brand`
+Source refs: `static-site:cta-section`, `figma:logo-brand`, `figma:icon-set`
 
 ## Do's and Don'ts
 - Do treat static-site visuals as final authority when sources conflict.
-- Do use Figma selectively for logos and brand styling references only.
+- Do use Figma only for logo and icon assets.
 - Do keep short source IDs near non-obvious token, layout, and component decisions.
 - Do preserve WCAG-oriented contrast and focus visibility guardrails for v1 defaults.
 - Do keep baseline motion restrained and respect reduced-motion preferences.
 - Don't inherit historical dark-theme bias unless explicit static-site evidence supports it.
-- Don't ingest broad exports from static-site, Storybook, or Figma into canonical tokens.
+- Don't ingest broad exports from static-site or Storybook into canonical tokens.
+- Don't use Figma for layout, spacing, or section background decisions in this file.
 - Don't canonize deprecated or experimental Storybook components in v1.
 - Don't remove keyboard focus indicators without an accessible replacement.
 - Don't introduce decorative motion patterns that exceed static-site behavior.
 - Don't expand the token taxonomy beyond currently evidenced needs.
+- Don't use coral tokens as section background colors.
 - Don't use Storybook as a source in this top-level brand file; keep product-level Storybook sourcing in `products/design.md`.
 
 ## Sources Mapping
 - Use short source IDs in `design.md` entries and keep detailed mappings canonical in `sources/mapping.md`.
-- Current IDs used in this file: `static-site:*`, `figma:logo-brand`.
+- Current IDs used in this file: `static-site:*`, `figma:logo-brand`, `figma:icon-set`.
