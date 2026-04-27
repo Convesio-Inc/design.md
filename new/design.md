@@ -346,6 +346,12 @@ Core component treatments are now grounded in static-site evidence:
 - `nav-link`, `nav-link-muted`, and `header-cta` represent the top header/navigation pattern shown in the static upload.
 - `hero-kicker` and `hero-status-panel` represent the front-page hero badge + right-side status panel pattern.
 
+Logo and icon asset mapping (explicit):
+- **Primary logo (light surfaces):** `assets/convesio-logo.svg`
+- **Inverse logo (dark surfaces):** `assets/convesio-logo-white.svg`
+- **Icon set path:** `assets/icons/`
+- **Usage rule:** use primary logo on light backgrounds and inverse logo on dark backgrounds; do not recolor logos beyond approved brand assets.
+
 Card styling note: light cards use white surfaces, `16px` corners, and `28px` inner padding with subtle hairline borders (`#ECECEC`) as seen in the static page card grid.
 
 Where the static site uses border-driven ghost styles, explicit borders, focus rings, and shadow nuances are captured in prose guidance until component property support expands.
