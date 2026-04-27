@@ -163,25 +163,25 @@ components:
     backgroundColor: "{colors.primary}"
     textColor: "{colors.surface}"
     typography: "{typography.label-sm}"
-    rounded: "{rounded.full}"
+    rounded: "{rounded.lg}"
     padding: "14px"
   button-primary-hover:
     backgroundColor: "{colors.link-aa-hover}"
     textColor: "{colors.surface}"
     typography: "{typography.label-sm}"
-    rounded: "{rounded.full}"
+    rounded: "{rounded.lg}"
     padding: "14px"
   button-secondary:
     backgroundColor: "{colors.surface}"
     textColor: "{colors.primary}"
     typography: "{typography.label-sm}"
-    rounded: "{rounded.full}"
+    rounded: "{rounded.lg}"
     padding: "14px"
   button-secondary-hover:
     backgroundColor: "{colors.primary}"
     textColor: "{colors.surface}"
     typography: "{typography.label-sm}"
-    rounded: "{rounded.full}"
+    rounded: "{rounded.lg}"
     padding: "14px"
   link-inline-aa:
     backgroundColor: "{colors.surface}"
@@ -223,7 +223,7 @@ components:
     backgroundColor: "{colors.primary}"
     textColor: "{colors.surface}"
     typography: "{typography.label-sm}"
-    rounded: "{rounded.full}"
+    rounded: "{rounded.lg}"
     padding: "14px"
   hero-kicker:
     backgroundColor: "{colors.surface}"
@@ -271,6 +271,7 @@ Future UI generation should favor the lighter static-site direction and avoid in
 Canonical authority model:
 - Static site is canonical for page-level visual direction and conflict resolution.
 - Figma is allowed only for logo and icon assets.
+- When base token declarations and rendered page usage diverge, follow rendered page usage as the canonical mapping.
 - Source-specific capture rules live in each source README; shared authority decisions are defined here.
 
 Source refs: `static-site:home-hero`, `static-site:page-surface`, `figma:logo-brand`, `figma:icon-set`
@@ -354,6 +355,7 @@ Source refs: `static-site:cta-section`, `figma:logo-brand`, `figma:icon-set`
 ## Do's and Don'ts
 - Do treat static-site visuals as final authority when sources conflict.
 - Do use Figma only for logo and icon assets.
+- Do prefer rendered page usage over generic/base token defaults when they differ.
 - Do keep short source IDs near non-obvious token, layout, and component decisions.
 - Do preserve WCAG-oriented contrast and focus visibility guardrails for v1 defaults.
 - Do keep baseline motion restrained and respect reduced-motion preferences.
