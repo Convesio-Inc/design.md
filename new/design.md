@@ -6,6 +6,7 @@ colors:
   primary: "#0D2743"
   secondary: "#2D85D8"
   tertiary: "#FF6A5B"
+  tertiary-soft: "#FFB3AA"
   neutral: "#F2F5F7"
   surface: "#FFFFFF"
   surface-alt: "#FAFAFA"
@@ -17,6 +18,8 @@ colors:
   on-surface-inverse: "#FFFFFF"
   border: "#ECECEC"
   border-strong: "#C3C9CE"
+  border-1: "#E5EBEF"
+  border-2: "#D9D9D9"
   success: "#2BB673"
   warning: "#F5A623"
   error: "#FF4040"
@@ -61,6 +64,11 @@ typography:
     fontSize: "18px"
     fontWeight: 500
     lineHeight: "1.4"
+  body-lg:
+    fontFamily: "Inter"
+    fontSize: "20px"
+    fontWeight: 400
+    lineHeight: "1.55"
   body-md:
     fontFamily: "Inter"
     fontSize: "16px"
@@ -89,6 +97,33 @@ typography:
     fontWeight: 600
     lineHeight: "16px"
     letterSpacing: "0.04em"
+  h1:
+    fontFamily: "Inter"
+    fontSize: "40px"
+    fontWeight: 800
+    lineHeight: "1.05"
+    letterSpacing: "-0.02em"
+  h2:
+    fontFamily: "Inter"
+    fontSize: "32px"
+    fontWeight: 700
+    lineHeight: "1.2"
+    letterSpacing: "-0.02em"
+  h3:
+    fontFamily: "Inter"
+    fontSize: "25px"
+    fontWeight: 600
+    lineHeight: "1.2"
+  h4:
+    fontFamily: "Inter"
+    fontSize: "21px"
+    fontWeight: 600
+    lineHeight: "1.2"
+  h5:
+    fontFamily: "Inter"
+    fontSize: "18px"
+    fontWeight: 500
+    lineHeight: "1.4"
 rounded:
   xs: "4px"
   sm: "6px"
@@ -117,9 +152,15 @@ shadows:
   md: "0 8px 20px rgba(13,39,67,0.10)"
   lg: "0 20px 48px rgba(13,39,67,0.14)"
   inset: "inset 0 1px 0 rgba(255,255,255,0.06)"
+motion:
+  ease-out: "cubic-bezier(.2,.6,.2,1)"
+  ease-in-out: "cubic-bezier(.4,0,.2,1)"
+  dur-fast: "120ms"
+  dur-base: "200ms"
+  dur-slow: "360ms"
 components:
   button-primary:
-    backgroundColor: "{colors.tertiary}"
+    backgroundColor: "{colors.tertiary-soft}"
     textColor: "{colors.primary}"
     typography: "{typography.label-sm}"
     rounded: "{rounded.full}"
@@ -197,6 +238,8 @@ Color roles are derived from static-site usage first. Figma color cues are limit
 
 Background treatments from the static site are part of the canonical palette: use `surface` and `surface-alt` for light backgrounds, `surface-dark`/`surface-dark-deep` for dark sections, and `on-surface-inverse` for text on dark backgrounds. Use `tertiary` for CTA emphasis and `primary` for strong navy anchors.
 
+Static-source mapping note: `tertiary-soft` (`#FFB3AA`) is the canonical primary CTA fill token from the static page button system, while `tertiary` (`#FF6A5B`) remains the core accent/coral token.
+
 Accessibility guardrails (v1): [contrast status: proposed, not yet verified end-to-end] body text and essential UI text should target WCAG AA contrast (4.5:1 minimum against its surface). Large text (18px regular or 14px bold and above) should not drop below 3:1. Non-text interactive UI indicators such as borders, icons, and controls should maintain at least 3:1 contrast against adjacent surfaces.
 
 Canonical accessibility defaults:
@@ -220,6 +263,8 @@ Use `container-lg` (`1240px`) and `container-sm` (`980px`) for content width con
 Focus visibility (v1): [focus status: proposed, partially verified] all keyboard-focusable controls must render a clearly visible focus indicator that is not color-only and remains present against light surfaces; prefer an outline or ring with at least 3:1 contrast from adjacent colors. Do not suppress focus styles without an equivalent, clearly perceivable replacement.
 
 Motion restraint (v1): [motion status: proposed, verification pending] keep motion subtle and functional, reflecting static-site behavior. Avoid autoplay, parallax-heavy movement, and long decorative animations in baseline experiences. For transitions, use short durations and support reduced motion by minimizing or removing non-essential animation when `prefers-reduced-motion` is enabled.
+
+Use `motion.ease-out`/`motion.ease-in-out` with `motion.dur-fast`/`motion.dur-base`/`motion.dur-slow` as default timing primitives.
 
 Source refs: `static-site:feature-grid`, `static-site:cta-section`
 
