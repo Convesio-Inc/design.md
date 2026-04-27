@@ -347,9 +347,11 @@ Core component treatments are now grounded in static-site evidence:
 - `hero-kicker` and `hero-status-panel` represent the front-page hero badge + right-side status panel pattern.
 
 Logo and icon asset mapping (explicit):
-- **Primary logo (light surfaces):** `assets/convesio-logo.svg`
-- **Inverse logo (dark surfaces):** `assets/convesio-logo-white.svg`
-- **Icon set path:** `assets/icons/`
+- **Primary logo (light surfaces):** `assets/convesio-logo.svg` (provided from Figma export package `Logo.svg.zip`).
+- **Inverse logo (dark surfaces):** `assets/convesio-logo-white.svg` (fetched from `https://convesio.com/wp-content/uploads/2025/06/convesio-logo-white.svg`).
+- **Icon set source:** `assets/host-menu-icon.svg`, `assets/convert-menu-icon.svg`, `assets/pay-menu-icon.svg`, `assets/service-menu-icon.svg` (fetched from `convesio.com`).
+- **Favicon/source mark:** `assets/convesio-favicon.png` (fetched from `https://convesio.com/wp-content/uploads/2024/05/convesio-favicon.png`).
+- **Repository note:** dark-surface logo and core header icons are now stored locally under `assets/`.
 - **Usage rule:** use primary logo on light backgrounds and inverse logo on dark backgrounds; do not recolor logos beyond approved brand assets.
 
 Card styling note: light cards use white surfaces, `16px` corners, and `28px` inner padding with subtle hairline borders (`#ECECEC`) as seen in the static page card grid.
